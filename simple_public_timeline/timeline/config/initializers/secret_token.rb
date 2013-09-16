@@ -1,7 +1,12 @@
 # Be sure to restart your server when you modify this file.
 
-# Your secret key for verifying the integrity of signed cookies.
+# Your secret key is used for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
+
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Timeline::Application.config.secret_token = 'c1a8db5ba5661e97d694fd5926e18d6f60a3ee88fb6f221f0b8a444009db3694de45635a7ea5ad1dbd82e256e80ac0eaf925c5692135bbdd53b848666cf4e8d0'
+# You can use `rake secret` to generate a secure secret key.
+
+# Make sure your secret_key_base is kept private
+# if you're sharing your code publicly.
+Timeline::Application.config.secret_key_base = 'f24389bcc59b14201ca797ca724f76c27b009ae44fd3e8b07612ca04919497aac4315a6c055afe9344f7322bb03417f23cdc6bc10a84c97742bf51db974cf2a6'
