@@ -1,6 +1,5 @@
 class Tweet < ActiveRecord::Base
   def self.fetch_create(limit = 100)
-    binding.pry
     count = 0
     TweetStream::Client.new.sample do |status|
       tweet = Tweet.find_or_create_by_uid(status.id)
