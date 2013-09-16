@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: jquery-rails 3.0.4 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "jquery-rails"
@@ -13,7 +14,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubyforge_project = "jquery-rails"
-  s.rubygems_version = "2.0.6"
+  s.rubygems_version = "2.1.3"
   s.summary = "Use jQuery with Rails 3"
 
   if s.respond_to? :specification_version then

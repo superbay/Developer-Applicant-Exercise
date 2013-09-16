@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: sass 3.2.10 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "sass"
@@ -16,7 +17,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.required_ruby_version = Gem::Requirement.new(">= 1.8.7")
   s.rubyforge_project = "sass"
-  s.rubygems_version = "2.0.6"
+  s.rubygems_version = "2.1.3"
   s.summary = "A powerful but elegant CSS compiler that makes CSS fun again."
 
   if s.respond_to? :specification_version then

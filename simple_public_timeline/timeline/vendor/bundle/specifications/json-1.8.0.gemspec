@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: json 1.8.0 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "json"
@@ -16,7 +17,7 @@ Gem::Specification.new do |s|
   s.licenses = ["Ruby"]
   s.rdoc_options = ["--title", "JSON implemention for Ruby", "--main", "README.rdoc"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.0.6"
+  s.rubygems_version = "2.1.3"
   s.summary = "JSON Implementation for Ruby"
 
   if s.respond_to? :specification_version then

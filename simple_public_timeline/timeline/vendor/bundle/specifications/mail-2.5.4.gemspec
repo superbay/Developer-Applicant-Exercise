@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: mail 2.5.4 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "mail"
@@ -14,7 +15,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/mikel/mail"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.0.6"
+  s.rubygems_version = "2.1.3"
   s.summary = "Mail provides a nice Ruby DSL for making, sending and reading emails."
 
   if s.respond_to? :specification_version then

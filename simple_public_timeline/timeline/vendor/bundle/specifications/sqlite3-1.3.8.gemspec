@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: sqlite3 1.3.8 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "sqlite3"
@@ -18,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.required_ruby_version = Gem::Requirement.new(">= 1.8.7")
   s.rubyforge_project = "sqlite3"
-  s.rubygems_version = "2.0.6"
+  s.rubygems_version = "2.1.3"
   s.summary = "This module allows Ruby programs to interface with the SQLite3 database engine (http://www.sqlite.org)"
 
   if s.respond_to? :specification_version then

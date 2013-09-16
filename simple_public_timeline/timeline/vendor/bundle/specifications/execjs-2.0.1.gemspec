@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: execjs 2.0.1 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "execjs"
@@ -12,7 +13,7 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/sstephenson/execjs"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.0.6"
+  s.rubygems_version = "2.1.3"
   s.summary = "Run JavaScript code from Ruby"
 
   if s.respond_to? :specification_version then

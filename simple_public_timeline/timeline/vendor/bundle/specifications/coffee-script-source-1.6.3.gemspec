@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: coffee-script-source 1.6.3 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "coffee-script-source"
@@ -13,6 +14,6 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubyforge_project = "coffee-script-source"
-  s.rubygems_version = "2.0.6"
+  s.rubygems_version = "2.1.3"
   s.summary = "The CoffeeScript Compiler"
 end

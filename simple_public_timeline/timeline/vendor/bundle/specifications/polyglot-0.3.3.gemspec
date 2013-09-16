@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: polyglot 0.3.3 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "polyglot"
@@ -14,6 +15,6 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/cjheath/polyglot"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.0.6"
+  s.rubygems_version = "2.1.3"
   s.summary = "Augment 'require' to load non-Ruby file types"
 end

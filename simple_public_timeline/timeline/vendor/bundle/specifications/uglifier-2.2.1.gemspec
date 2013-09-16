@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+# stub: uglifier 2.2.1 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "uglifier"
@@ -13,7 +14,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/lautis/uglifier"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "2.0.6"
+  s.rubygems_version = "2.1.3"
   s.summary = "Ruby wrapper for UglifyJS JavaScript compressor"
 
   if s.respond_to? :specification_version then
