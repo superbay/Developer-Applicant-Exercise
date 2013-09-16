@@ -1,6 +1,7 @@
 class Tweet < ActiveRecord::Base
   def self.fetch_create
     binding.pry
+    count = 0
     TweetStream::Client.new.sample do |status|
       tweet = Tweet.find_or_create_by_uid(status.id)
       tweet.update_attributes(
@@ -11,6 +12,8 @@ class Tweet < ActiveRecord::Base
         published_at: status.created_at,
         source: status.source
       )
+      count += 1
+      break if count == 20
     end
   end
 end
