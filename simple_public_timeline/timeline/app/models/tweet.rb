@@ -1,9 +1,9 @@
 class Tweet < ActiveRecord::Base
-  def self.fetch_create(limit = 100
+  def self.fetch_create(limit = 100)
     binding.pry
     count = 0
     TweetStream::Client.new.sample do |status|
-      tweet = Tweet.find_or_create_by_uid(status.id
+      tweet = Tweet.find_or_create_by_uid(status.id)
       tweet.update_attributes(
         name: status.user.name,
         screen_name: status.user.screen_name,
@@ -12,7 +12,7 @@ class Tweet < ActiveRecord::Base
         published_at: status.created_at,
         source: status.source,
         language: status.lang
-      
+      ) 
       count += 1
       break if count >= limit
     end
