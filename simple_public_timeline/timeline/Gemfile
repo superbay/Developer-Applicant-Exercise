@@ -50,3 +50,5 @@ group :development, :test do
   gem 'pry-debugger'
   gem 'factory_girl'
 end
+
+gem 'slim-rails'
