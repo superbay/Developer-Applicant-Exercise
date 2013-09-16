@@ -15,13 +15,13 @@ class Tweet < ActiveRecord::Base
       count += 1
       break if count >= limit
     end
+    self.order('created_at desc').limit(limit)
   end
 
   def self.lang_map
     {
       'ar' => 'Arabic', 
-      'eu' => 'Basque', 
-      'ca' => 'Catalan', 
+      'eu' => 'Basque', 'ca' => 'Catalan', 
       'cs' => 'Czech', 
       'da' => 'Danish', 
       'nl' => 'Dutch', 
