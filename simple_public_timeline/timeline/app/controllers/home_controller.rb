@@ -3,13 +3,13 @@ class HomeController < ApplicationController
     @lang = params[:language]
     if @lang
       @tweets = Tweet.where(language: @lang).limit(20)
-    elsif
+    else
       @tweets = Tweet.known.limit(20)
     end
   end
 
   def more_tweets
-    @more_tweets = Tweet.fetch_create(20)
+    @more_tweets = Tweet.fetch_create(20, params[:language])
     render partial: 'tweet', collection: @more_tweets
   end
 end

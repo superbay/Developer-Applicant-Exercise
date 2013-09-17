@@ -1,7 +1,7 @@
 class Tweet < ActiveRecord::Base
   scope :known, -> {where language: Tweet.lang_map.keys}
 
-  def self.fetch_create(limit = 100)
+  def self.fetch_create(limit = 100, language = nil)
     count = 0
     TweetStream::Client.new.sample do |status|
       tweet = Tweet.find_or_create_by_uid(status.id)
@@ -14,10 +14,10 @@ class Tweet < ActiveRecord::Base
         source: status.source,
         language: status.lang
       ) 
-      count += 1
+      count += 1 if tweet.language == language || language.nil?
       break if count >= limit
     end
-    self.order('created_at desc').limit(limit)
+    self.where(language: language).order('created_at desc').limit(limit)
   end
 
   def language_in_words
