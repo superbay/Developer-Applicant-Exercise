@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
   def index
-    language = params[:language]
-    if language
-      @tweets = Tweet.where(language: language).limit(20)
+    @lang = params[:language]
+    if @lang
+      @tweets = Tweet.where(language: @lang).limit(20)
     elsif
       @tweets = Tweet.known.limit(20)
     end

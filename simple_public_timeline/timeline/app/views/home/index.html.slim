@@ -11,7 +11,7 @@
 .span4
   .well.sidebar-nav
     = form_tag root_path, method: :get do
-      = select_tag 'language', options_for_select(@tweets.map(&:options_for_language).uniq.compact.reduce({}){|x, sum| sum.merge x}), prompt: 'Select Language'
+      = select_tag 'language', options_for_select(@tweets.map(&:options_for_language).uniq.compact.reduce({}){|x, sum| sum.merge x}, @lang), prompt: 'Select Language'
       <br/>
       = submit_tag 'Search', class:'btn'
 
