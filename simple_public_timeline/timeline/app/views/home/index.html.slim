@@ -10,7 +10,10 @@
 
 .span4
   .well.sidebar-nav
-    = @tweets.map(&:language_in_words).uniq.compact
+    = form_tag root_path, method: :get do
+      = select_tag 'language', options_for_select(@tweets.map(&:options_for_language).uniq.compact.reduce({}){|x, sum| sum.merge x}), prompt: 'Select Language'
+      <br/>
+      = submit_tag 'Search', class:'btn'
 
 javascript:
   $(window).on('scroll',function(){
