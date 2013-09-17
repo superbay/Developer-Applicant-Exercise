@@ -10,6 +10,7 @@
 
 .span4
   .well.sidebar-nav
+    = @tweets.map(&:language_in_words).uniq.compact
 
 javascript:
   $(window).on('scroll',function(){

@@ -18,10 +18,15 @@ class Tweet < ActiveRecord::Base
     self.order('created_at desc').limit(limit)
   end
 
+  def language_in_words
+    Tweet.lang_map[self.language]
+  end
+
   def self.lang_map
     {
       'ar' => 'Arabic', 
-      'eu' => 'Basque', 'ca' => 'Catalan', 
+      'eu' => 'Basque',
+      'ca' => 'Catalan', 
       'cs' => 'Czech', 
       'da' => 'Danish', 
       'nl' => 'Dutch', 
