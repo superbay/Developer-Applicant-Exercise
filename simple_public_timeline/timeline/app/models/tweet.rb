@@ -1,4 +1,6 @@
 class Tweet < ActiveRecord::Base
+  scope :known, -> {where language: Tweet.lang_map.keys}
+
   def self.fetch_create(limit = 100)
     count = 0
     TweetStream::Client.new.sample do |status|
@@ -19,7 +21,11 @@ class Tweet < ActiveRecord::Base
   end
 
   def language_in_words
-    Tweet.lang_map[self.language]
+    Tweet.lang_map[self.language] || 'others'
+  end
+
+  def options_for_language
+    {language_in_words => self.language}
   end
 
   def self.lang_map
