@@ -14,7 +14,7 @@ class Tweet < ActiveRecord::Base
         source: status.source,
         language: status.lang
       ) 
-      count += 1 if tweet.language == language || language.nil?
+      count += 1 if tweet.language == language || language.nil? || language.blank?
       break if count >= limit
     end
     self.where(language: language).order('created_at desc').limit(limit)
