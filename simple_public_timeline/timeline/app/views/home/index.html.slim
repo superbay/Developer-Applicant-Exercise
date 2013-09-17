@@ -26,14 +26,14 @@ javascript:
       $('#spinner').removeClass("hide")
       //Get older posts
       $.ajax({
-          type: 'get',
-          url: "#{home_more_tweets_path}", 
-          data: {language: "#{@lang}"},
-          success: function(oldposts){
-              //Append #postsDiv
-              $('#spinner').addClass("hide")
-              $('#postsDiv').append(oldposts).fadeIn('slow');
-          }
+        type: 'get',
+        url: "#{home_more_tweets_path}", 
+        data: {language: "#{@lang}"},
+        success: function(oldposts){
+          //Append #postsDiv
+          $('#spinner').addClass("hide")
+          $('#postsDiv').append(oldposts).fadeIn('slow');
+        }
       });
     } 
   });
