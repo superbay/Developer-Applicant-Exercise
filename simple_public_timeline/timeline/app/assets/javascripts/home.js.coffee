@@ -3,28 +3,25 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready ->
   $('#language1').change ->
-    language =  $('#language1').val()
-    $('#language').val(language)
+    lang =  $('#language1').val()
+    $('#language').val(lang)
     $('#spinner').removeClass("hide")
     $('#postsDiv').empty()
-    $.ajax({
-      url: "/home/more_tweets",
-      data: {language: language}
-    }).done (rs) ->
-      $('#spinner').addClass("hide")
-      $('#postsDiv').append(rs).fadeIn('slow')
+    fetch lang
 
   $(window).on "scroll", ->
-    lang = $("#language1").value
     if $(window).scrollTop() is ($(document).height() - $(window).height())
+      lang = $("#language1").value
       $("#spinner").removeClass "hide"
-      #Get older posts
-      $.ajax
-        type: "get"
-        url: '/home/more_tweets'
-        data:
-          language: lang
-        success: (oldposts) ->
-          #Append #postsDiv
-          $("#spinner").addClass "hide"
-          $("#postsDiv").append(oldposts).fadeIn "slow"
+      fetch lang  
+
+  fetch = (lang) ->
+    $.ajax
+      type: "get"
+      url: '/home/more_tweets'
+      data:
+        language: lang
+      success: (oldposts) ->
+        $("#spinner").addClass "hide"
+        $("#postsDiv").append(oldposts).fadeIn "slow"
+
