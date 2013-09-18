@@ -19,21 +19,3 @@
 
     h3 filter via ajax
     = select_tag 'language1', options_for_select(Tweet.limit(100).map(&:options_for_language).uniq.compact.reduce({}){|x, sum| sum.merge x}, @lang), prompt: 'Select Language'
-
-javascript:
-  $(window).on('scroll',function(){
-    if($(window).scrollTop()==($(document).height()-$(window).height())){
-      $('#spinner').removeClass("hide")
-      //Get older posts
-      $.ajax({
-        type: 'get',
-        url: "#{home_more_tweets_path}", 
-        data: {language: "#{@lang}"},
-        success: function(oldposts){
-          //Append #postsDiv
-          $('#spinner').addClass("hide")
-          $('#postsDiv').append(oldposts).fadeIn('slow');
-        }
-      });
-    } 
-  });

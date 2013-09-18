@@ -4,7 +4,8 @@
 $(document).ready ->
   $('#language1').change ->
     language =  $('#language1').val()
-    $('#language').val(language)
+    #console.log('PJ')
+    #alert(country_id)
     $('#spinner').removeClass("hide")
     $('#postsDiv').empty()
     $.ajax({
@@ -13,18 +14,4 @@ $(document).ready ->
     }).done (rs) ->
       $('#spinner').addClass("hide")
       $('#postsDiv').append(rs).fadeIn('slow')
-
-  $(window).on "scroll", ->
-    lang = $("#language1").value
-    if $(window).scrollTop() is ($(document).height() - $(window).height())
-      $("#spinner").removeClass "hide"
-      #Get older posts
-      $.ajax
-        type: "get"
-        url: '/home/more_tweets'
-        data:
-          language: lang
-        success: (oldposts) ->
-          #Append #postsDiv
-          $("#spinner").addClass "hide"
-          $("#postsDiv").append(oldposts).fadeIn "slow"
+      console.log(rs)
